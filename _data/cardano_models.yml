@@ -1,0 +1,45 @@
+- title: "Template DQSD Model A"
+  dqsd_variant: "Baseline DQSD"
+  subsystem: "Transaction flow"
+  scope: "Transaction arrival, queueing, and service discipline"
+  description: "Replace this with a short summary of the model, including what aspect of Cardano it captures and why it matters."
+  assumptions:
+    - "Assumption 1 goes here"
+    - "Assumption 2 goes here"
+    - "Assumption 3 goes here"
+  metrics:
+    - "Throughput"
+    - "Latency"
+  paper_url: ""
+  code_url: ""
+  notes_url: ""
+
+- title: "Template DQSD Model B"
+  dqsd_variant: "Extended DQSD"
+  subsystem: "Block production"
+  scope: "Block generation and settlement timing"
+  description: "Replace this with a description of how the model extends or differs from the baseline."
+  assumptions:
+    - "PoS epoch assumption"
+    - "Propagation simplification"
+  metrics:
+    - "Settlement delay"
+    - "Block utilisation"
+  paper_url: ""
+  code_url: ""
+  notes_url: ""
+
+- title: "Template DQSD Model C"
+  dqsd_variant: "Validation / Comparison"
+  subsystem: "Empirical comparison"
+  scope: "Comparison between DQSD predictions and measured behaviour"
+  description: "Use this entry pattern for validation or calibration models."
+  assumptions:
+    - "Calibration window specified"
+    - "Observed workload conditions"
+  metrics:
+    - "Prediction error"
+    - "Latency"
+  paper_url: ""
+  code_url: ""
+  notes_url: ""

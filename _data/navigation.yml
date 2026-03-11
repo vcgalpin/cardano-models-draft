@@ -1,0 +1,14 @@
+- title: Home
+  url: /
+
+- title: Cardano DQSD Models
+  url: /cardano/
+
+- title: Bitcoin
+  url: /other-chains/bitcoin/
+
+- title: Ethereum
+  url: /other-chains/ethereum/
+
+- title: About
+  url: /about/
