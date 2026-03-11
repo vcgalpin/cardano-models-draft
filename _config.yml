@@ -11,3 +11,6 @@ defaults:
       path: ""
     values:
       layout: default
+
+top_logo: /assets/images/io_research_hub-01_750px.png.webp
+bottom_logo: /assets/images/uoe_io_750px_2.png.webp

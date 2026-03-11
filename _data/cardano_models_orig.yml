@@ -1,6 +1,4 @@
 - title: "Template DQSD Model A"
-  authors: "A. Researcher"
-  year: 2024
   dqsd_variant: "Baseline DQSD"
   subsystem: "Transaction flow"
   scope: "Transaction arrival, queueing, and service discipline"
@@ -12,15 +10,11 @@
   metrics:
     - "Throughput"
     - "Latency"
-  reference_type: "GitHub Pages"
-  reference_label: "Project page"
-  reference_url: "https://example.github.io/model-a/"
-  repository_url: "https://github.com/example/model-a"
+  paper_url: ""
+  code_url: ""
   notes_url: ""
 
 - title: "Template DQSD Model B"
-  authors: "B. Researcher and C. Researcher"
-  year: 2023
   dqsd_variant: "Extended DQSD"
   subsystem: "Block production"
   scope: "Block generation and settlement timing"
@@ -31,15 +25,11 @@
   metrics:
     - "Settlement delay"
     - "Block utilisation"
-  reference_type: "Technical note"
-  reference_label: "Technical note"
-  reference_url: "https://example.org/notes/model-b"
-  repository_url: ""
+  paper_url: ""
+  code_url: ""
   notes_url: ""
 
 - title: "Template DQSD Model C"
-  authors: "D. Researcher et al."
-  year: 2022
   dqsd_variant: "Validation / Comparison"
   subsystem: "Empirical comparison"
   scope: "Comparison between DQSD predictions and measured behaviour"
@@ -50,9 +40,6 @@
   metrics:
     - "Prediction error"
     - "Latency"
-  reference_type: "Repository"
-  reference_label: "Source repository"
-  reference_url: "https://github.com/example/model-c"
-  repository_url: "https://github.com/example/model-c"
-  notes_url: "https://example.github.io/model-c/"
-
+  paper_url: ""
+  code_url: ""
+  notes_url: ""

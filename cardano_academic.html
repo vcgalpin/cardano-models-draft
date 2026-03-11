@@ -41,8 +41,7 @@ permalink: /cardano/
 {% assign grouped_models = site.data.cardano_models | group_by: "subsystem" %}
 
 {% for group in grouped_models %}
-  <section class="document-section model-section" id="{{ group.name | slugify }}">
- 
+  <section class="document-section" id="{{ group.name | slugify }}">
     <h2>{{ group.name }}</h2>
     {% for model in group.items %}
       {% include model-card.html model=model %}

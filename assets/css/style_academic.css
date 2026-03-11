@@ -1,18 +1,14 @@
 :root {
-  --bg: #f6f7f4;
+  --bg: #f8f8f6;
   --panel: #ffffff;
-  --panel-soft: #fbfcfe;
-  --sidebar-bg: #eaf0f6;
-  --text: #202224;
-  --muted: #5f6773;
-  --border: #d7dde6;
-  --accent: #2f5d8a;
-  --accent-2: #6a8caf;
-  --accent-soft: #eef4fb;
-  --heading-accent: #25496b;
-  --shadow: 0 8px 22px rgba(33, 46, 66, 0.08);
+  --sidebar-bg: #f1f1ed;
+  --text: #1f1f1b;
+  --muted: #66665e;
+  --border: #d8d8cf;
+  --accent: #243b6b;
+  --accent-soft: #e9edf5;
   --sidebar-width: 290px;
-  --radius: 10px;
+  --radius: 4px;
 }
 
 * {
@@ -48,7 +44,7 @@ a:hover {
 }
 
 .sidebar {
-  background: linear-gradient(to bottom, #edf3f8 0%, #e6edf5 100%);
+  background: var(--sidebar-bg);
   border-right: 1px solid var(--border);
   padding: 1.5rem;
   position: sticky;
@@ -64,14 +60,14 @@ a:hover {
 
 .site-brand h1 {
   margin: 0 0 0.4rem 0;
-  font-size: 1.28rem;
+  font-size: 1.25rem;
   line-height: 1.3;
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 700;
 }
 
 .site-brand h1 a {
-  color: var(--heading-accent);
+  color: var(--text);
   text-decoration: none;
 }
 
@@ -90,9 +86,8 @@ a:hover {
 
 .sidebar-nav a {
   color: var(--text);
-  padding: 0.45rem 0.55rem;
+  padding: 0.4rem 0.2rem;
   border-left: 3px solid transparent;
-  border-radius: 6px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 0.96rem;
 }
@@ -100,29 +95,22 @@ a:hover {
 .sidebar-nav a:hover,
 .sidebar-nav a.active {
   border-left-color: var(--accent);
-  background: rgba(255, 255, 255, 0.6);
+  padding-left: 0.6rem;
   text-decoration: none;
 }
 
 .content {
   padding: 2.2rem 3rem;
-  max-width: 1180px;
+  max-width: 980px;
   width: 100%;
 }
 
 .page-intro,
-.document-section,
-.note-box {
+.document-section {
   background: var(--panel);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
   padding: 1.5rem 1.7rem;
   margin-bottom: 1.4rem;
-}
-
-.page-intro {
-  background: linear-gradient(to bottom, #ffffff 0%, #fbfcfe 100%);
 }
 
 .page-intro h1,
@@ -132,17 +120,12 @@ a:hover {
 .catalogue-record h4 {
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 700;
-  color: var(--heading-accent);
+  color: var(--text);
 }
 
 .page-intro h1,
 .document-section h2 {
   margin-top: 0;
-}
-
-.document-section h2 {
-  padding-bottom: 0.4rem;
-  border-bottom: 2px solid var(--accent-soft);
 }
 
 .small-muted {
@@ -164,46 +147,34 @@ a:hover {
   margin-left: 0.2rem;
 }
 
-/* --- model section layout: two columns of blocks --- */
-
-.model-section {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.2rem 1.3rem;
-}
-
-.model-section > h2 {
-  grid-column: 1 / -1;
-  margin-bottom: 0.2rem;
-}
-
 .catalogue-record {
-  background: var(--panel-soft);
-  border: 1px solid var(--border);
-  border-left: 5px solid var(--accent-2);
-  border-radius: var(--radius);
-  box-shadow: 0 4px 14px rgba(33, 46, 66, 0.06);
-  padding: 1rem 1.1rem 1.05rem 1.1rem;
+  padding-top: 1rem;
+  padding-bottom: 1.1rem;
+  border-top: 1px solid var(--border);
+}
+
+.catalogue-record:first-of-type {
+  border-top: none;
+  padding-top: 0.2rem;
 }
 
 .record-header h3 {
   margin: 0;
-  font-size: 1.16rem;
-  line-height: 1.35;
+  font-size: 1.2rem;
 }
 
 .record-citation {
   margin: 0.25rem 0 0 0;
   color: var(--muted);
   font-style: italic;
-  font-size: 0.97rem;
+  font-size: 0.98rem;
 }
 
 .record-metadata {
-  margin: 0.95rem 0;
+  margin: 1rem 0;
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.7rem;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: 0.8rem 1.4rem;
 }
 
 .record-metadata div {
@@ -212,10 +183,10 @@ a:hover {
 
 .record-metadata dt {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--accent);
+  letter-spacing: 0.04em;
+  color: var(--muted);
   margin-bottom: 0.15rem;
 }
 
@@ -224,28 +195,21 @@ a:hover {
 }
 
 .record-section {
-  margin-top: 0.9rem;
+  margin-top: 1rem;
 }
 
 .record-section h4 {
-  margin: 0 0 0.35rem 0;
-  font-size: 0.98rem;
-  color: var(--heading-accent);
-}
-
-.record-section p {
-  margin-top: 0.2rem;
-  margin-bottom: 0;
+  margin: 0 0 0.4rem 0;
+  font-size: 1rem;
 }
 
 .record-section ul {
   margin-top: 0.35rem;
   margin-bottom: 0;
-  padding-left: 1.15rem;
 }
 
 .reference-list {
-  padding-left: 1.15rem;
+  padding-left: 1.2rem;
 }
 
 .reference-list li {
@@ -254,7 +218,7 @@ a:hover {
 
 .reference-type {
   color: var(--muted);
-  font-size: 0.93rem;
+  font-size: 0.95rem;
 }
 
 .section-list {
@@ -262,8 +226,10 @@ a:hover {
 }
 
 .note-box {
-  background: #fffdf7;
-  border-left: 4px solid #c6a85b;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.4rem;
 }
 
 .quick-links {
@@ -282,23 +248,6 @@ a:hover {
   font-size: inherit;
 }
 
-/* optional subtle hover on cards */
-.catalogue-record:hover {
-  box-shadow: 0 8px 20px rgba(33, 46, 66, 0.1);
-  transform: translateY(-1px);
-  transition: box-shadow 0.15s ease, transform 0.15s ease;
-}
-
-@media (max-width: 1100px) {
-  .content {
-    max-width: 1000px;
-  }
-
-  .model-section {
-    grid-template-columns: 1fr;
-  }
-}
-
 @media (max-width: 950px) {
   .site-shell {
     grid-template-columns: 1fr;
@@ -314,44 +263,9 @@ a:hover {
   .content {
     padding: 1.4rem;
   }
-}
 
-.sidebar-inner {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
-
-.sidebar-top {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.sidebar-bottom {
-  padding-top: 1rem;
-  margin-top: 1.5rem;
-  border-top: 1px solid var(--border);
-}
-
-.sidebar-logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.sidebar-logo img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-.sidebar-logo-top img {
-  max-height: 200px;
-}
-
-.sidebar-logo-bottom img {
-  max-height: 200px;
+  .record-metadata {
+    grid-template-columns: 1fr;
+  }
 }
 

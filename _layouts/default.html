@@ -13,20 +13,36 @@
   <div class="site-shell">
     <aside class="sidebar">
       <div class="sidebar-inner">
-        <div class="site-brand">
-          <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
-          <p>{{ site.description }}</p>
+        <div class="sidebar-top">
+          {% if site.top_logo %}
+            <div class="sidebar-logo sidebar-logo-top">
+              <img src="{{ site.top_logo | relative_url }}" alt="Site logo">
+            </div>
+          {% endif %}
+
+          <div class="site-brand">
+            <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+            <p>{{ site.description }}</p>
+          </div>
+
+          <nav class="sidebar-nav" aria-label="Main navigation">
+            {% for item in site.data.navigation %}
+              <a
+                href="{{ item.url | relative_url }}"
+                class="{% if page.url == item.url %}active{% endif %}">
+                {{ item.title }}
+              </a>
+            {% endfor %}
+          </nav>
         </div>
 
-        <nav class="sidebar-nav" aria-label="Main navigation">
-          {% for item in site.data.navigation %}
-            <a
-              href="{{ item.url | relative_url }}"
-              class="{% if page.url == item.url %}active{% endif %}">
-              {{ item.title }}
-            </a>
-          {% endfor %}
-        </nav>
+        {% if site.bottom_logo %}
+          <div class="sidebar-bottom">
+            <div class="sidebar-logo sidebar-logo-bottom">
+              <img src="{{ site.bottom_logo | relative_url }}" alt="Footer logo">
+            </div>
+          </div>
+        {% endif %}
       </div>
     </aside>
 
@@ -36,3 +52,4 @@
   </div>
 </body>
 </html>
+

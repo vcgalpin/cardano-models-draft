@@ -1,0 +1,48 @@
+<article class="model-card" id="{{ include.model.title | slugify }}">
+  <header class="model-card-header">
+    <div>
+      <h3>{{ include.model.title }}</h3>
+      <p class="model-variant">{{ include.model.dqsd_variant }}</p>
+    </div>
+    <span class="subsystem-pill">{{ include.model.subsystem }}</span>
+  </header>
+
+  <p>{{ include.model.description }}</p>
+
+  <div class="meta-grid">
+    <div>
+      <strong>Scope</strong>
+      <p>{{ include.model.scope }}</p>
+    </div>
+
+    <div>
+      <strong>Metrics</strong>
+      <p>{{ include.model.metrics | join: ", " }}</p>
+    </div>
+  </div>
+
+  {% if include.model.assumptions %}
+    <div class="card-section">
+      <strong>Assumptions</strong>
+      <ul class="tag-list">
+        {% for assumption in include.model.assumptions %}
+          <li>{{ assumption }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+
+  <div class="card-links">
+    {% if include.model.paper_url and include.model.paper_url != "" %}
+      <a href="{{ include.model.paper_url }}" target="_blank" rel="noopener">Paper</a>
+    {% endif %}
+
+    {% if include.model.code_url and include.model.code_url != "" %}
+      <a href="{{ include.model.code_url }}" target="_blank" rel="noopener">Code</a>
+    {% endif %}
+
+    {% if include.model.notes_url and include.model.notes_url != "" %}
+      <a href="{{ include.model.notes_url }}" target="_blank" rel="noopener">Notes</a>
+    {% endif %}
+  </div>
+</article>

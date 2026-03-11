@@ -1,0 +1,39 @@
+---
+title: Cardano DQSD Models
+permalink: /cardano/
+---
+
+<section class="page-intro" id="overview">
+  <h1>Cardano DQSD Models</h1>
+  <p>
+    This page is the main catalogue for Cardano-focused performance models
+    expressed in DQSD form. Each entry is intended to capture the model’s scope,
+    key assumptions, performance measures, and links to relevant material.
+  </p>
+  <p class="small-muted">
+    Replace the placeholder content in <code>_data/cardano_models.yml</code> with
+    your own model entries.
+  </p>
+</section>
+
+<section class="section-block" id="model-index">
+  <h2>Model index</h2>
+  <ul class="quick-links">
+    {% for model in site.data.cardano_models %}
+      <li>
+        <a href="#{{ model.title | slugify }}">{{ model.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+
+{% assign grouped_models = site.data.cardano_models | group_by: "subsystem" %}
+
+{% for group in grouped_models %}
+  <section class="model-group" id="{{ group.name | slugify }}">
+    <h2>{{ group.name }}</h2>
+    {% for model in group.items %}
+      {% include model-card.html model=model %}
+    {% endfor %}
+  </section>
+{% endfor %}
