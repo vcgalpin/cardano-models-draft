@@ -1,0 +1,16 @@
+title: Cardano Performance Models
+description: Catalog of Cardano performance models in DQSD with links to other models and data sources.
+baseurl: "/cardano-models-draft"
+url: "https://vcgalpin.github.io"
+markdown: kramdown
+permalink: pretty
+timezone: Europe/London
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+top_logo: /assets/images/io_research_hub-01_750px.png.webp
+bottom_logo: /assets/images/uoe_io_750px_2.png.webp
